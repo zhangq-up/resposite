@@ -11,7 +11,7 @@
 		.wid100{
 			width: 100%;
 		}
-		#WeChatAndroid {
+		#main {
 			display: none;
 		}
 		#WeChatios {
@@ -31,9 +31,8 @@
 	</style>
 	<body>
 		<div>  
-			<div class="p-15" id="guide">
-				<img src="./downLoadImg.png" class="wid100" id="WeChatAndroid" />
-				<img src="./downLoadWeChat.png" class="wid100" id="WeChatios" />
+			<div class="p-15" id="WeChatios">
+				<img src="./downLoadWeChat.png" class="wid100"/>
 			</div>
 			<div class="btn" id="main">
 				<span class="btn-span" id="btn">郑州银行APP</span>
@@ -42,9 +41,7 @@
 	</body>
 	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
 	<script type="text/javascript">
-		var WeChatAndroid = document.getElementById("WeChatAndroid");
 		var WeChatios = document.getElementById("WeChatios");
-		var guide = document.getElementById("guide");
 		var main = document.getElementById("main");
 		
 		var ua = navigator.userAgent.toLowerCase();  
@@ -53,20 +50,10 @@
 		var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
 		var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
 		if (isWeixin) {
-			guide.style.display = "block";
 			main.style.display = "none";
-			if(isAndroid){
-				WeChatAndroid.style.display = "block";
-				WeChatios.style.display = "none";
-			}
-			if(isiOS){
-				WeChatios.style.display = "block";
-				WeChatAndroid.style.display = "none";
-			}
+			WeChatios.style.display = "block";
 		}else{
-			guide.style.display = "none";
 			main.style.display = "block";
-			WeChatAndroid.style.display = "none";
 			WeChatios.style.display = "none";
 		}  
 		
@@ -90,23 +77,11 @@
 			if(isiOS){
 				window.location = "https://apps.apple.com/cn/app/id571831520"
 			}
-			
-//		    const u = navigator.userAgent;
-//		    let system = '';
-//		    if (u.indexOf('Android') > -1 || u.indexOf('Adr') > -1) {
-//		        system = 'Android';
-//		    } else if (!!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)) {
-//		        system = 'iOS';
-//		    } else {
-//		        system = 'unknown';
-//		    }
-//		    // 根据系统不同，跳转不同的下载APP地址
-//		    if(system === 'Android') {
-//		        window.location = "https://sj.qq.com/myapp/detail.htm?apkName=com.zzbank.mobile.bank"
-//		    } else if(system === 'iOS') {
-//		        window.location = "https://apps.apple.com/cn/app/id571831520"
-//		    }
 		}
+		
+		$(function() {
+			openApp();
+		})
 	</script>
 </html>
 
