@@ -64,7 +64,7 @@
 		    // 通过iframe的方式试图打开APP，如果能正常打开，会直接切换到APP
 		    // 每个APP有自己scheme协议名称，例如微信是weixin:// 
 		    // 否则跳转APP下载页
-			location.href="zzbk://zz_financial/financial/financial_detail.html" + window.location.search;
+			location.href="zzbk://zz_financial/financial/financial_detail.html" + window.location.search + '&id=20190929';
 		    window.setTimeout(function(){
 		        downloadAPP()
 		    },2000)
