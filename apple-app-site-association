@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "88HZ9C97YF.com.zhengzhoubank.pibp",
+        "paths": ["/zzbank.cn","/","*"]
+      }
+    ]
+  }
+}
